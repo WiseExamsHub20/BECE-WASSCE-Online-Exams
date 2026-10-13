@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#12345a">
+<title>BECE & WASSCE ONLINE MOCK</title>
+<style>
+:root{--navy:#12345a;--blue:#176b9a;--gold:#ffc857;--ink:#172536;--muted:#65758a;--paper:#f4f7fb;--white:#fff;--line:#dce5ef}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink)}.wrap{max-width:980px;margin:auto;padding:18px}.hero{background:linear-gradient(135deg,#102744,#176b9a);color:white;padding:28px 22px;border-radius:22px;position:relative;overflow:hidden}.badge{display:inline-block;background:#ffffff20;border:1px solid #ffffff35;border-radius:999px;padding:7px 11px;font-size:12px;letter-spacing:.08em}.hero h1{font-size:clamp(27px,6vw,43px);line-height:1.08;margin:17px 0 10px;max-width:650px}.hero p{color:#e2edf7;line-height:1.55;max-width:580px}.hero .star{font-size:50px;position:absolute;right:22px;top:22px;opacity:.9}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.tile,.panel{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:17px}.tile strong{display:block;color:var(--navy);font-size:17px;margin-bottom:5px}.tile span{font-size:13px;color:var(--muted)}.columns{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.panel h2{margin:0 0 8px;font-size:21px}.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 17px}.field{display:block;margin:13px 0 6px;font-size:14px;font-weight:700}input,select{width:100%;padding:13px 12px;border:1px solid #cbd7e4;border-radius:10px;font-size:16px;background:white;color:var(--ink)}button{width:100%;border:0;border-radius:10px;background:var(--blue);color:white;font-size:16px;font-weight:700;padding:14px;margin-top:14px;cursor:pointer}button:focus,input:focus,select:focus{outline:3px solid #ffc85780;outline-offset:2px}.notice{font-size:12px;line-height:1.5;color:var(--muted);margin-top:12px}.rank{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}.rank:last-child{border-bottom:0}.rank b{color:var(--navy)}.medal{font-size:20px;margin-right:8px}.footer{text-align:center;font-size:12px;color:var(--muted);padding:22px 8px}.status{font-size:14px;line-height:1.45;margin-top:12px;color:#8a4c00}.status.good{color:#167344}@media(max-width:650px){.grid{grid-template-columns:1fr}.columns{grid-template-columns:1fr}.hero .star{font-size:36px;right:15px;top:18px}.hero{padding:23px 18px}.wrap{padding:12px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="hero">
+    <span class="badge">BECE • WASSCE • ONLINE PRACTICE</span>
+    <div class="star" aria-hidden="true">🏆</div>
+    <h1>BECE & WASSCE<br>ONLINE MOCK</h1>
+    <p>Practise for your examinations, check your results and work your way up the leaderboard.</p>
+  </section>
+  <section class="grid" aria-label="Platform features">
+    <div class="tile"><strong>📝 Mock exams</strong><span>Practise subjects and topics</span></div>
+    <div class="tile"><strong>⏱️ Timed tests</strong><span>Prepare under exam conditions</span></div>
+    <div class="tile"><strong>🥇 Leaderboard</strong><span>Compete for the top position</span></div>
+  </section>
+  <section class="columns">
+    <div class="panel">
+      <h2>Student entrance</h2>
+      <p class="sub">Enter your username and PIN to access an examination.</p>
+      <form id="login-form">
+        <label class="field" for="username">Username</label>
+        <input id="username" name="username" maxlength="30" autocomplete="username" placeholder="Enter your username" required>
+        <label class="field" for="pin">PIN</label>
+        <input id="pin" name="pin" inputmode="numeric" autocomplete="current-password" maxlength="12" type="password" placeholder="Enter your PIN" required>
+        <label class="field" for="exam-type">Examination category</label>
+        <select id="exam-type" name="exam-type"><option>BECE</option><option>WASSCE</option></select>
+        <button type="submit">Continue</button>
+        <p id="status" class="status" role="status">Website starter page only. Student accounts and examinations are not connected yet.</p>
+      </form>
+      <p class="notice">For your safety, this starter page does not save or send the username or PIN you enter.</p>
+    </div>
+    <div class="panel">
+      <h2>🏆 Leaderboard</h2>
+      <p class="sub">Top candidates will appear here once the live database and scoring system are connected.</p>
+      <div class="rank"><span><span class="medal">🥇</span>First place</span><b>— points</b></div>
+      <div class="rank"><span><span class="medal">🥈</span>Second place</span><b>— points</b></div>
+      <div class="rank"><span><span class="medal">🥉</span>Third place</span><b>— points</b></div>
+      <p class="notice">No real student results are shown on this starter page.</p>
+    </div>
+  </section>
+  <div class="footer">BECE & WASSCE ONLINE MOCK · Student practice platform</div>
+</main>
+<script>
+document.getElementById('login-form').addEventListener('submit',function(e){
+ e.preventDefault();
+ const status=document.getElementById('status');
+ status.textContent='The page design is ready, but login is not active yet. We will connect Firebase authentication and the examination database next. Do not use real PINs on this preview.';
+ status.className='status';
+});
+</script>
+</body>
+</html>
