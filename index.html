@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+thy<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -83,4 +83,26 @@ function clearResults(){if(confirm("Clear all saved results from this device?"))
 function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 renderExam();
 </script>
-</body></html>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCHPOOFn4rClARWQ1iigmNyjsK1QFEKeNc",
+  authDomain: "bece-and-wassce-online-exams.firebaseapp.com",
+  projectId: "bece-and-wassce-online-exams",
+  storageBucket: "bece-and-wassce-online-exams.firebasestorage.app",
+  messagingSenderId: "497734403785",
+  appId: "1:497734403785:web:27364600280c3fcaabef18"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+window.firebaseAuth = auth;
+window.firebaseDB = db;
+
+console.log("Firebase connected successfully!");
+</script></body></html>
